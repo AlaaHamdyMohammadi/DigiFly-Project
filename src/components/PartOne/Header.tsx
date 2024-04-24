@@ -24,7 +24,7 @@ const Header = () => {
   const items = ["Home", "Categories", "Contact us", "About"];
 
   return (
-    <main className="h-[88px] pt-4 px-[80px] g-[30px] flex items-center justify-between">
+    <main className="h-[88px] pt-4 px-[80px] gap-[30px] flex items-center justify-between">
       <section className="">
         <Image src="/logo.png" alt="logo" width={76.57} height={56} />
       </section>
