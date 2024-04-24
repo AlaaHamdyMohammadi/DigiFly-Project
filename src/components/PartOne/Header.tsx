@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
+  const t = useTranslations("Header");
   const [isActive, setIsActive] = useState<number | undefined>(undefined);
 
   const handleClick = (index: number) => {
@@ -11,7 +13,6 @@ const Header = () => {
   };
 
   const items = ["Home", "Categories", "Contact us", "About"];
-
   return (
     <main className="h-[88px] pt-4 px-[80px] g-[30px] flex items-center justify-between">
       <section className="">
@@ -33,7 +34,8 @@ const Header = () => {
                   }}
                   onClick={() => handleClick(index)}
                 >
-                  {item}
+                  {t(`${item}`)}
+                  {/* {item} */}
                 </Link>
               </li>
             );
