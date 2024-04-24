@@ -1,18 +1,28 @@
 "use client";
-import { useState } from "react";
+import React from "react";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
+  const router = useRouter();
   const t = useTranslations("Header");
-  const [isActive, setIsActive] = useState<number | undefined>(undefined);
+  const [isActive, setIsActive] = React.useState<number | undefined>(undefined);
 
   const handleClick = (index: number) => {
     setIsActive(index);
   };
 
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+    console.log(event.target.value);
+    router.replace(`/${selectedValue}`);
+    // setSelectedLanguage(selectedValue);
+  };
+
   const items = ["Home", "Categories", "Contact us", "About"];
+
   return (
     <main className="h-[88px] pt-4 px-[80px] g-[30px] flex items-center justify-between">
       <section className="">
@@ -35,24 +45,40 @@ const Header = () => {
                   onClick={() => handleClick(index)}
                 >
                   {t(`${item}`)}
-                  {/* {item} */}
                 </Link>
               </li>
             );
           })}
         </ul>
       </section>
-      <section className="flex items-center gap-2">
-        <h6 className="text-sm font-medium">العربية</h6>
-        <div className="w-6 h-6 relative">
-          <Image
-            src={"/EgyptFlag.png"}
-            alt="EgyptFlag"
-            objectFit="cover"
-            layout="fill"
-            className="rounded-full"
-          />
-        </div>
+
+      <section>
+        <select onChange={handleSelectChange}>
+          <option className="flex items-center gap-2" value="en">
+            <h6 className="text-sm font-medium">العربية</h6>
+            <div className="w-6 h-6 relative">
+              <Image
+                src={"/EgyptFlag.png"}
+                alt="EgyptFlag"
+                objectFit="cover"
+                layout="fill"
+                className="rounded-full"
+              />
+            </div>
+          </option>
+          <option className="flex items-center gap-2" value="ar">
+            <h6 className="text-sm font-medium">En</h6>
+            <div className="w-6 h-6 relative">
+              <Image
+                src={"/EgyptFlag.png"}
+                alt="EgyptFlag"
+                objectFit="cover"
+                layout="fill"
+                className="rounded-full"
+              />
+            </div>
+          </option>
+        </select>
       </section>
     </main>
   );
