@@ -14,7 +14,7 @@ const Table = () => {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get("/user-informations");
-        console.log("Response : ", response.data);
+        // console.log("Response : ", response.data);
         dispatch(setUsers(response.data));
       } catch (error) {
         console.error("Error message: ", error);
