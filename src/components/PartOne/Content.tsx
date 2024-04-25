@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Content = () => {
   return (
@@ -19,6 +19,6 @@ const Content = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Content
+export default Content;
