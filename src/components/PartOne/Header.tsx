@@ -3,24 +3,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import LanguageSwitch from "./LanguageSwitch";
 
 const Header = () => {
-  const router = useRouter();
   const t = useTranslations("Header");
   const [isActive, setIsActive] = React.useState<number | undefined>(undefined);
 
   const handleClick = (index: number) => {
     setIsActive(index);
-  };
-
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = event.target.value;
-    //console.log(event.target.value);
-    router.replace(`/${selectedValue}`);
-    // setSelectedLanguage(selectedValue);
   };
 
   const items = ["Home", "Categories", "Contact us", "About"];
@@ -55,33 +46,7 @@ const Header = () => {
       </section>
 
       <section>
-        {/* <select onChange={handleSelectChange}>
-          <option className="flex items-center gap-2" value="en">
-            <h6 className="text-sm font-medium">العربية</h6>
-            <div className="w-6 h-6 relative">
-              <Image
-                src={"/EgyptFlag.png"}
-                alt="EgyptFlag"
-                objectFit="cover"
-                layout="fill"
-                className="rounded-full"
-              />
-            </div>
-          </option>
-          <option className="flex items-center gap-2" value="ar">
-            <h6 className="text-sm font-medium">En</h6>
-            <div className="w-6 h-6 relative">
-              <Image
-                src={"/EgyptFlag.png"}
-                alt="EgyptFlag"
-                objectFit="cover"
-                layout="fill"
-                className="rounded-full"
-              />
-            </div>
-          </option>
-        </select> */}
-        <LanguageSwitch/>
+        <LanguageSwitch />
       </section>
     </main>
   );

@@ -5,23 +5,26 @@
     "Contact us": "Contact us",
     "About": "About us"
   },
-  "PartOne":{
-    "title": "Part1",
+  "PartOne": {
+    "title": "Part 1",
     "description": "Utilize the provided Strapi API from the assessment to post user data into your Redux store. You are required to add one user into the &apos;users&apos; collection and display this data in a table using a GET request. Ensure the implementation of Redux for state management, including both POST requests for adding a user and GET requests for displaying data in the table."
   },
-  "Form":{
+  "Form": {
     "firstName": "First name",
     "lastName": "Last name",
     "mobileNumber": "Mobile Number",
     "email": "Email",
     "send": "Send"
   },
-  "Table":{
+  "Table": {
     "results": "Results",
     "firstName": "First name",
     "lastName": "Last name",
     "mobileNumber": "Mobile Number",
     "email": "Email"
+  },
+  "PartTwo": {
+    "title": "Part 2",
+    "description": "Implement a map using any library of your choice (Leaflet is recommended). Search for the coordinates of 'Digifly Company' on Google Maps, then place a tooltip at these coordinates. Ensure that the tooltip styling matches the provided design below."
   }
-
 }
