@@ -1,23 +1,27 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { setUsers } from "@/store/usersSlice";
 import axiosInstance from "@/axiosConfig/instance";
 
 const Table = () => {
-  const [users, setUsers] = useState([]);
+  const dispatch = useDispatch();
+  const users = useSelector((state: RootState) => state.users.users);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get("/user-informations");
         console.log("Response : ", response.data);
-        setUsers(response.data);
+        dispatch(setUsers(response.data));
       } catch (error) {
         console.error("Error message: ", error);
       }
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="gap-6 h-[419px]">

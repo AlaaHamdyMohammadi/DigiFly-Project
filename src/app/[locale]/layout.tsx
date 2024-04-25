@@ -1,7 +1,6 @@
-// 'use client';
-// import { useEffect } from "react";
 import type { Metadata } from "next";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { StoreProvider } from "@/store/StoreProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,13 +20,13 @@ export default function RootLayout({
 }: Readonly<RootLayoutProps>) {
   const messages = useMessages();
 
- 
-
   return (
-    <html lang={locale}>
-      <NextIntlClientProvider messages={messages}>
-        <body className={locale === "ar" ? "rtl" : ""}>{children}</body>
-      </NextIntlClientProvider>
-    </html>
+    <StoreProvider>
+      <html lang={locale}>
+        <NextIntlClientProvider messages={messages}>
+          <body className={locale === "ar" ? "rtl" : ""}>{children}</body>
+        </NextIntlClientProvider>
+      </html>
+    </StoreProvider>
   );
 }
