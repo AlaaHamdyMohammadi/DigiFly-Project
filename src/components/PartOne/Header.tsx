@@ -1,9 +1,11 @@
 "use client";
+
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
+import LanguageSwitch from "./LanguageSwitch";
 
 const Header = () => {
   const router = useRouter();
@@ -16,7 +18,7 @@ const Header = () => {
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
-    console.log(event.target.value);
+    //console.log(event.target.value);
     router.replace(`/${selectedValue}`);
     // setSelectedLanguage(selectedValue);
   };
@@ -53,7 +55,7 @@ const Header = () => {
       </section>
 
       <section>
-        <select onChange={handleSelectChange}>
+        {/* <select onChange={handleSelectChange}>
           <option className="flex items-center gap-2" value="en">
             <h6 className="text-sm font-medium">العربية</h6>
             <div className="w-6 h-6 relative">
@@ -78,7 +80,8 @@ const Header = () => {
               />
             </div>
           </option>
-        </select>
+        </select> */}
+        <LanguageSwitch/>
       </section>
     </main>
   );

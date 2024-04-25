@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useTranslations } from "next-intl";
 import axiosInstance from "@/axiosConfig/instance";
 import { addUser } from "@/store/usersSlice";
 
 const Form = () => {
   const dispatch = useDispatch();
+  const t = useTranslations("Form");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,11 +42,11 @@ const Form = () => {
       <div className="w-[546px] h-[78px] flex items-center gap-[30px]">
         <div className="w-[258px] gap-4">
           <label className="font-medium text-sm text-gray-900">
-            First name
+            {t("firstName")}
           </label>
           <input
             type="text"
-            placeholder="First name"
+            placeholder={t("firstName")}
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
@@ -53,11 +55,11 @@ const Form = () => {
         </div>
         <div className="w-[258px] gap-4">
           <label className="font-medium text-sm text-gray-900 ">
-            Last name
+            {t("lastName")}
           </label>
           <input
             type="text"
-            placeholder="Last name"
+            placeholder={t("lastName")}
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
@@ -67,11 +69,11 @@ const Form = () => {
       </div>
       <div className="gap-4 mt-8 flex flex-col">
         <label className="font-medium text-sm text-gray-900">
-          Mobile number
+          {t("mobileNumber")}
         </label>
         <input
           type="text"
-          placeholder="Mobile number"
+          placeholder={t("mobileNumber")}
           name="phone"
           value={formData.phone}
           onChange={handleChange}
@@ -79,10 +81,12 @@ const Form = () => {
         />
       </div>
       <div className="gap-4 mt-8 flex flex-col">
-        <label className="font-medium text-sm text-gray-900">Email</label>
+        <label className="font-medium text-sm text-gray-900">
+          {t("email")}
+        </label>
         <input
           type="email"
-          placeholder="Email"
+          placeholder={t("email")}
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -91,7 +95,7 @@ const Form = () => {
       </div>
       <div className="mt-8 w-[554px] h-[52px] rounded-sm p-2 gap-[10px] bg-[#49BD88] flex items-center justify-center cursor-pointer">
         <button type="submit" className="text-[16px] font-bold text-white ">
-          Send
+          {t("send")}
         </button>
       </div>
     </form>
