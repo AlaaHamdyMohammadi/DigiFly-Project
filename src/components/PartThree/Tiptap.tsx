@@ -11,11 +11,9 @@ import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
 
 import Toolbar from "./Toolbar";
+import { TiptapProps } from "../../../types";
 
-interface TiptapProps {
-  content: string;
-  onChange: any;
-}
+
 const Tiptap: React.FC<TiptapProps> = ({ content, onChange }) => {
   const handleChange = (newContent: string) => {
     onChange(newContent);

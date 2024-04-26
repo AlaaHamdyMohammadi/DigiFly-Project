@@ -27,7 +27,7 @@ const Table = () => {
 
   return (
     <div className="gap-6 h-[419px]">
-      <h3 className=" mb-5 font-bold text-[16px] text-[#6D5CBC]">
+      <h3 className=" mb-5 font-bold text-[16px] text-secondary">
         {t("results")}:
       </h3>
       <table className="rounded-sm border-gray-400 shadow-lg">

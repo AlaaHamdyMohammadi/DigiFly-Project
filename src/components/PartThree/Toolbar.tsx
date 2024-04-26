@@ -19,11 +19,9 @@ import {
   UndoIcon,
   QuoteIcon,
 } from "lucide-react";
+import { ToolbarProps } from "../../../types";
 
-interface ToolbarProps {
-  editor: Editor | null;
-  content: string;
-}
+
 
 const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
   if (!editor) return null;
@@ -36,7 +34,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleOrderedList().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("orderedList") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("orderedList") ? "bg-primary text-white" : ""
         }`}
       >
         <ListOrderedIcon className="w-4 h-4" />
@@ -47,7 +45,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleBulletList().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("bulletList") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("bulletList") ? "bg-primary text-white" : ""
         }`}
       >
         <ListIcon className=" w-4 h-4" />
@@ -58,7 +56,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleNode().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("indent") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("indent") ? "bg-primary text-white" : ""
         }`}
       >
         <IndentIcon className=" w-4 h-4" />
@@ -69,9 +67,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().setTextAlign("left").run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive({ textAlign: "left" })
-            ? "bg-[#49BD88] text-white"
-            : ""
+          editor.isActive({ textAlign: "left" }) ? "bg-primary text-white" : ""
         }`}
       >
         <AlignLeftIcon className=" w-4 h-4" />
@@ -83,7 +79,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
           editor.isActive({ textAlign: "center" })
-            ? "bg-[#49BD88] text-white"
+            ? "bg-primary text-white"
             : ""
         }`}
       >
@@ -96,7 +92,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
           editor.isActive("align", { right: true })
-            ? "bg-[#49BD88] text-white"
+            ? "bg-primary text-white"
             : ""
         }`}
       >
@@ -108,7 +104,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleNode().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("outdent") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("outdent") ? "bg-primary text-white" : ""
         }`}
       >
         <OutdentIcon className=" w-4 h-4" />
@@ -119,7 +115,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleBaseline().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("baseline") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("baseline") ? "bg-primary text-white" : ""
         }`}
       >
         <BaselineIcon className=" w-4 h-4" />
@@ -130,7 +126,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleBold().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("bold") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("bold") ? "bg-primary text-white" : ""
         }`}
       >
         <BoldIcon className=" w-4 h-4" />
@@ -141,7 +137,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleItalic().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("italic") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("italic") ? "bg-primary text-white" : ""
         }`}
       >
         <ItalicIcon className=" w-4 h-4" />
@@ -152,7 +148,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleUnderline().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("underline") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("underline") ? "bg-primary text-white" : ""
         }`}
       >
         <UnderlineIcon className=" w-4 h-4" />
@@ -164,7 +160,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
           editor.isActive("heading", { level: 3 })
-            ? "bg-[#49BD88] text-white"
+            ? "bg-primary text-white"
             : ""
         }`}
       >
@@ -177,7 +173,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
           editor.isActive("heading", { level: 5 })
-            ? "bg-[#49BD88] text-white"
+            ? "bg-primary text-white"
             : ""
         }`}
       >
@@ -189,7 +185,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().toggleStrike().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("strike") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("strike") ? "bg-primary text-white" : ""
         }`}
       >
         <Strikethrough className=" w-4 h-4" />
@@ -200,7 +196,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().redo().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("redo") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("redo") ? "bg-primary text-white" : ""
         }`}
       >
         <RedoIcon className=" w-4 h-4" />
@@ -211,7 +207,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ editor, content }) => {
           editor.chain().focus().undo().run();
         }}
         className={`flex items-center justify-center w-20 h-16 border-r-[0.5px] py-2 px-6 gap-[10px] ${
-          editor.isActive("undo") ? "bg-[#49BD88] text-white" : ""
+          editor.isActive("undo") ? "bg-primary text-white" : ""
         }`}
       >
         <UndoIcon className="flex items-center w-4 h-4" />

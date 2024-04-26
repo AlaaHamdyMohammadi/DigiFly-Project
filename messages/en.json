@@ -11,9 +11,15 @@
   },
   "Form": {
     "firstName": "First name",
+    "firstNameError": "First name is required.",
     "lastName": "Last name",
+    "lastNameError": "Last name is required.",
     "mobileNumber": "Mobile Number",
+    "mobileNumberError1": "Mobile number is required",
+    "mobileNumberError2": "Mobile number is invalid",
     "email": "Email",
+    "emailError1": "Email is required",
+    "emailError2": "Email is invalid",
     "send": "Send"
   },
   "Table": {

@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <main className="h-[88px] pt-4 px-[80px] gap-[30px] flex items-center justify-between">
-      <section className="">
+      <Link href="/" className="">
         <Image src="/logo.png" alt="logo" width={76.57} height={56} />
-      </section>
+      </Link>
       <section className="w-[844px]">
         <ul className="flex gap-4">
           {items.map((item, index) => {

@@ -11,9 +11,15 @@
   },
   "Form": {
     "firstName": "الإسم الأول",
+    "firstNameError": "الإسم الأول مطلوب.",
     "lastName": "الإسم الأخير",
+    "lastNameError": "الإسم الأخير مطلوب.",
     "mobileNumber": "رقم الموبايل",
-    "email": "البريد الألكتروني",
+    "mobileNumberError1": "رقم الموبايل مطلوب.",
+    "mobileNumberError2": "رقم الموبايل غير صحيح.",
+    "email": "البريد الإلكتروني",
+    "emailError1": "البريد الإلكتروني مطلوب.",
+    "emailError2": "البريد الإلكتروني غير صحيح.",
     "send": "إرسال"
   },
   "Table": {
