@@ -1,9 +1,13 @@
-import React from 'react'
+import Content from './Content';
+import TextEditor from './TextEditor';
 
 const PartThree = () => {
   return (
-    <div>PartThree</div>
-  )
+    <main className="h-[749px]">
+      <Content />
+      <TextEditor />
+    </main>
+  );
 }
 
 export default PartThree

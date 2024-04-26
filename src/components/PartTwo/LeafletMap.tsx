@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 const redIcon = new L.Icon({
-  iconUrl: "/gps.png", 
+  iconUrl: "/gps.png",
   iconSize: [50, 50],
   iconAnchor: [17, 46],
   popupAnchor: [-50, -86],
@@ -15,7 +15,7 @@ const redIcon = new L.Icon({
 const position: LatLngTuple = [30.062484149184794, 31.338515898322484];
 
 const LeafletMap = () => {
-    const t = useTranslations("MapPopup");
+  const t = useTranslations("MapPopup");
   return (
     <main className="py-[120px] rounded-sm flex relative">
       <div
@@ -44,7 +44,7 @@ const LeafletMap = () => {
                   {t("digi")}
                 </span>{" "}
                 <span className="font-bold text-xl text-white">{t("fly")}</span>{" "}
-                 {t("content")}
+                {t("content")}
               </p>
             </Popup>
           </Marker>

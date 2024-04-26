@@ -15,12 +15,13 @@ body.rtl {
   direction: rtl;
 }
 
+
 .leaflet-popup-content-wrapper{
   width: 212px;
   /* height: 120px; */
   border-radius: 8px;
   background-color: #6D5BBE;
-
+  
 }
 
 .leaflet-popup-close-button{
