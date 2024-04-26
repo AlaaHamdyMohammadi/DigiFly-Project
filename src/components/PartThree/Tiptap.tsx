@@ -1,25 +1,54 @@
 "use client";
 
-import { useCurrentEditor, EditorProvider } from "@tiptap/react";
+import React from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { BoldIcon, Italic } from "lucide-react";
+import Underline from "@tiptap/extension-underline";
+import TextAlign from "@tiptap/extension-text-align";
+import ListItem from "@tiptap/extension-list-item";
+import OrderedList from "@tiptap/extension-ordered-list";
+import FontFamily from "@tiptap/extension-font-family";
+import TextStyle from "@tiptap/extension-text-style";
+
 import Toolbar from "./Toolbar";
 
-const Tiptap = () => {
-  
-  const extensions = [StarterKit];
-  const content = "<p>Hello World! 🌎️</p>";
+interface TiptapProps {
+  content: string;
+  onChange: any;
+}
+const Tiptap: React.FC<TiptapProps> = ({ content, onChange }) => {
+  const handleChange = (newContent: string) => {
+    onChange(newContent);
+  };
 
-  // const editor = useEditor({
-  //   slotBefore: <Toolbar/>,
-  //   extensions: [StarterKit],
-  //   content: "<p>Hello World! 🌎️</p>",
-  // });
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Underline,
+      ListItem,
+      OrderedList,
+      TextStyle, FontFamily,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
+    ],
+    editorProps: {
+      attributes: {
+        class:
+          "h-[243px] p-10 gap-[10px] focus:outline-none focus:border-[#6D5CBC]",
+      },
+    },
+    onUpdate: ({ editor }) => {
+      handleChange(editor.getHTML());
+    },
+  });
 
-  return <EditorProvider slotBefore={<Toolbar/>} extensions={extensions} content={content}>
-    <></>
-  </EditorProvider>;
+  return (
+    <section>
+      <Toolbar editor={editor} content={content} />
+      <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} />
+    </section>
+  );
 };
 
 export default Tiptap;
