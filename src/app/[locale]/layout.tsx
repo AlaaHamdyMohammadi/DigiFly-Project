@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider, useMessages } from "next-intl";
 import { StoreProvider } from "@/store/StoreProvider";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import "./globals.css";
 
 export const metadata: Metadata = {

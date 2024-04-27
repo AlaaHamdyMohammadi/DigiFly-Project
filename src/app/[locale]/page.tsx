@@ -4,7 +4,7 @@ import PartThree from "@/components/PartThree/PartThree";
 
 export default function Home() {
   return (
-    <main className="bg-[#FCFCFE]">
+    <main className="bg-[#FCFCFE] w-full flex flex-col">
       <PartOne />
       <PartTwo />
       <PartThree />

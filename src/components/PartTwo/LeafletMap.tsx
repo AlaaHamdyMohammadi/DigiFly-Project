@@ -17,13 +17,12 @@ const position: LatLngTuple = [30.062484149184794, 31.338515898322484];
 const LeafletMap = () => {
   const t = useTranslations("MapPopup");
   return (
-    <main className="py-[120px] rounded-sm flex relative">
+    <main className="pt-[120px] rounded-sm">
       <div
-        className="h-[647px] w-full"
+        className="h-[647px] gradient"
         style={{
           position: "relative",
-          background:
-            "linear-gradient(#FCFCFE 100%, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 100%)",
+          
         }}
       >
         <MapContainer

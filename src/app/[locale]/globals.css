@@ -15,6 +15,9 @@ body.rtl {
   direction: rtl;
 }
 
+.gradient{
+    background: linear-gradient(90deg, #FCFCFE 100%, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 100%);
+}
 
 .leaflet-popup-content-wrapper{
   width: 212px;
@@ -36,8 +39,4 @@ body.rtl {
 
 .leaflet-popup-tip{
   background-color: #6D5BBE;
-  
-  /* width: 77.97px;
-  height: 107.01px;
-  transform: rotate(171.98deg); */
 }

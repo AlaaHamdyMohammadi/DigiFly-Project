@@ -5,7 +5,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
-import ListItem from "@tiptap/extension-list-item";
+import ListItem from "@tiptap/extension-list-item"; 
 import OrderedList from "@tiptap/extension-ordered-list";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";

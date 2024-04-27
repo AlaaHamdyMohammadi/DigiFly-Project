@@ -26,14 +26,14 @@ const Table = () => {
   }, [dispatch]);
 
   return (
-    <div className="gap-6 h-[419px]">
-      <h3 className=" mb-5 font-bold text-[16px] text-secondary">
+    <div className="flex flex-col gap-6">
+      <h3 className="font-bold text-[16px] text-secondary">
         {t("results")}:
       </h3>
       <table className="rounded-sm border-gray-400 shadow-lg">
         <thead className="">
           <tr className="text-left bg-gray-100 border-b">
-            <th className=" border-r py-4 px-6 gap-[10px] font-normal text-sm">
+            <th className="border-r py-4 px-6 flex gap-[10px] font-normal text-sm">
               {t("firstName")}
             </th>
             <th className="border-r py-4 px-6 gap-[10px] font-normal text-sm">

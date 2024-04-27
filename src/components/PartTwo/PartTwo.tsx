@@ -3,7 +3,7 @@ import LeafletMap from './LeafletMap';
 
 const PartTwo = () => {
   return (
-    <main className="h-[969px]">
+    <main className="">
       <Content />
       <LeafletMap/>
     </main>
