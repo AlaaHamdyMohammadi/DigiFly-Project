@@ -9,7 +9,7 @@ const redIcon = new L.Icon({
   iconUrl: "/gps.png",
   iconSize: [50, 50],
   iconAnchor: [17, 46],
-  popupAnchor: [-50, -86],
+  popupAnchor: [-20, -66],
 });
 
 const position: LatLngTuple = [30.062484149184794, 31.338515898322484];
@@ -22,7 +22,6 @@ const LeafletMap = () => {
         className="h-[647px] gradient"
         style={{
           position: "relative",
-          
         }}
       >
         <MapContainer
