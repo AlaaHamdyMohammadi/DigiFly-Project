@@ -1,20 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+DigiFly-Project is a web application using Typescript, Redux or Redux Toolkit, NextJS, Tailwind-
+CSS, Leaflet, and i18next to interact with Strapi API.
 
-## Getting Started
+## How to Run the Project
 
-First, run the development server:
+To run the DigiFly-Project locally, follow these steps:
 
-```bash
+1.Clone the repository: 
+https://github.com/AlaaHamdyMohammadi/DigiFly-Project.git
+
+2.Install dependencies:
+npm install
+
+3.Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4.Open your web browser and go to http://localhost:3000 to view the application.
+
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
